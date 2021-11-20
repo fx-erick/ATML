@@ -36,6 +36,7 @@ FLAGS = flags.FLAGS
 flags.DEFINE_integer('training_epochs', None,
                      'The number of epochs to run training for.')
 # Hyperparameters
+#flags.DEFINE_type(name, default value, description)
 flags.DEFINE_integer('batch_size', 256, 'Hyperparameter: batch size.')
 flags.DEFINE_float('learning_rate', 1e-2, 'Hyperparameter: learning rate.')
 flags.DEFINE_float('l2_reg', 0.0, 'Hyperparameter: L2 regularization')
@@ -147,16 +148,19 @@ def train_step(nn_model,
   """Take a training step."""
   total_loss, losses = 0.0, {}
   with tf.GradientTape() as tape:
+    #tape being gradient
     tape.watch(nn_model.trainable_variables)
     if not debugging:
       cross_entropy_loss = training_helpers.cross_entropy_loss(
           nn_model, x, y, training=True)
       losses['cross_entropy_loss'] = cross_entropy_loss
       total_loss += cross_entropy_loss
+        # regularization
     if l2_reg > 0:
       l2_regularization_loss = training_helpers.weight_decay(nn_model)
       losses['l2_regularization_loss'] = l2_regularization_loss
       total_loss += l2_reg * l2_regularization_loss
+    # Alignment loss coefficient: alpha
     if alpha > 0:
       alignment_loss, _, _ = training_helpers.representation_alignment_loss(
           nn_model,
