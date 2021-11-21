@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.12)  20 NOV 2021 19:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.12)  21 NOV 2021 12:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -888,45 +888,63 @@ LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
 (Font)              scaled to size 6.58002pt on input line 59.
 LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
 (Font)              scaled to size 4.70001pt on input line 59.
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
-
- []
-
+<figures/Learning_architecture.png, id=62, 2261.44875pt x 970.62625pt>
+File: figures/Learning_architecture.png Graphic file (type png)
+<use figures/Learning_architecture.png>
+Package pdftex.def Info: figures/Learning_architecture.png  used on input line 
+74.
+(pdftex.def)             Requested size: 358.50609pt x 153.86674pt.
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 91--93
-
- []
-
+<figures/optimal_trajectories.png, id=84, 1879.02pt x 711.65875pt>
+File: figures/optimal_trajectories.png Graphic file (type png)
+<use figures/optimal_trajectories.png>
+Package pdftex.def Info: figures/optimal_trajectories.png  used on input line 9
+8.
+(pdftex.def)             Requested size: 358.50609pt x 135.78123pt.
+ [3 <./figures/Learning_architecture.png> <./figures/optimal_trajectories.png>]
 LaTeX Font Info:    Trying to load font information for TS1+mdput on input line
- 108.
-(/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdput/ts1mdput.fd
+ 117.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdput/ts1mdput.fd
 File: ts1mdput.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdput.
 )
 LaTeX Font Info:    Font shape `TS1/mdput/m/n' will be
-(Font)              scaled to size 9.40002pt on input line 108.
+(Font)              scaled to size 9.40002pt on input line 117.
 
-Overfull \hbox (0.28311pt too wide) in paragraph at lines 110--111
+Overfull \hbox (0.28311pt too wide) in paragraph at lines 119--120
 []\T1/mdput/m/n/10 The ran-dom grid eval-u-ates gen-er-al-iz-a-tion like su-per
 -vised learn-ing where the train-ing and test samples
  []
 
+<figures/tabular_results.png, id=93, 1496.59125pt x 471.7625pt>
+File: figures/tabular_results.png Graphic file (type png)
+<use figures/tabular_results.png>
+Package pdftex.def Info: figures/tabular_results.png  used on input line 125.
+(pdftex.def)             Requested size: 358.50609pt x 113.00935pt.
+<figures/grid_results.png, id=94, 1749.53625pt x 326.21875pt>
+File: figures/grid_results.png Graphic file (type png)
+<use figures/grid_results.png>
+Package pdftex.def Info: figures/grid_results.png  used on input line 134.
+(pdftex.def)             Requested size: 358.50609pt x 66.8454pt.
 No file report_original.bbl.
-[3] (./report_original.aux)
+[4 <./figures/tabular_results.png> <./figures/grid_results.png>]
+(./report_original.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `report_original.out' has not changed.
 (rerunfilecheck)             Checksum: F6BC4A8E4A46676A96AC13FBC15AEA65;1627.
  ) 
 Here is how much of TeX's memory you used:
- 13464 strings out of 478994
- 200321 string characters out of 5858183
- 512241 words of memory out of 5000000
- 30674 multiletter control sequences out of 15000+600000
- 534075 words of font info for 127 fonts, out of 8000000 for 9000
+ 13508 strings out of 478994
+ 201379 string characters out of 5858183
+ 515572 words of memory out of 5000000
+ 30704 multiletter control sequences out of 15000+600000
+ 535163 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,5n,131p,1599b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,6n,131p,1599b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</usr/loca
 l/texlive/2021/texmf-dist/fonts/type1/public/mathdesign/mdput/md-utr7m.pfb></us
@@ -935,17 +953,18 @@ b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathdesign/mdput/md-ut
 r7v.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathdesign/mdput
 /md-utr7y.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/mathdesign
 /mdput/md-utr8t.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/math
-design/mdput/md-utri7m.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/adob
-e/utopia/putb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/adobe/utopi
-a/putr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/putri
-8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900
-.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.p
-fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
->
-Output written on report_original.pdf (3 pages, 319142 bytes).
+design/mdput/md-utri7m.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publ
+ic/mathdesign/mdpgd/md-utrma.pfb></usr/local/texlive/2021/texmf-dist/fonts/type
+1/adobe/utopia/putb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/adobe
+/utopia/putr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/adobe/utopia
+/putri8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sf
+rm0900.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm
+1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm12
+00.pfb>
+Output written on report_original.pdf (4 pages, 1154589 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 15 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 154 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
+ 90 words of extra memory for PDF output out of 10000 (max. 10000000)
 

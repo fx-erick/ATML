@@ -62,36 +62,45 @@ For two state spaces and an anchor state y the positive pair is chosen as the on
 All other states are grouped to negative pairs. Eventually, we aim to map unknown states into this embedding to infer good policies. Therefore, a function is needed that maps states into the embedding. The contrastive loss to learn this mapping is inspired from SimCLR, which also uses self supervised learning and heavy data augmentation to create a representation space of images that can be used for classification. [SimCLR]. The contrastive loss is given by: 
 
 \begin{equation}\label{contrastive loss}
-l_{\theta} (\tilde{x}_y, y; \mathcal{X}' ) = 
+l_{\theta} (\tilde{x}_y, y; \chi' ) = 
 - \log \frac{\Gamma (\tilde{x_y}, y ) \exp(\lambda s_{\theta} (\tilde{x}_y, y))}
 {\Gamma(\tilde{x}_y, y) \exp (\lambda s_{\theta}(\tilde{x}_y, y)) + \sum_{x'\in \chi' \setminus {\tilde{x}_y}} (1 - \Gamma (x',y)) \exp (\lambda s_{\theta} (x',y))}
 \end{equation}
 This function $z_\phi$ is composed of an encoding $f_\phi$ leading to the latent representation of the state and a non-linear projection $h_\phi$, following SimCLR. The contrastive loss (Equation \ref{contrastive loss}) is applied to the Projection to train the network. The inference of a suitable policy is done in the representation space as an affine function $\pi_\theta (\cdot \mid y) = W^T f_y + b$
-with learnable parameters W and b. The training procedure is depicted in the following Figure.
+with learnable parameters W and b. The training procedure is depicted in the Figure \ref{fig: Learning_Architecture}.
 
--- Learning figure --
+\begin{figure} 
+\centering
+\includegraphics[width = 0.8\textwidth]{figures/Learning_architecture.png}
+\caption{\label{fig: Learning_Architecture}An input pair (x,y) is first augmented and then mapped into the representation space $f$. The loss function defined in Equation \ref{contrastive loss} is applied to a non-linear projection $z$ of this representation space.}
+\end{figure}
 
 The contrastive metric embeddings learnt with policy metrics are referred to as policy similarity metrics. They are learnt simultaneously during training, where an auxiliary objective derived from the contrastive loss is introduced.
+The total contrastive loss for the MDPs $\mathcal{M}_\chi$ and $\mathcal{M}_y$ are derived from the optimal trajectories $\tau_\chi^* = {x_t}_{t = 1}^N$ and $\tau_y^* = {y_t}_{t = 1}^N$.
+$x_t$ and $y_t$ are the single states in the optimal trajectories. $x_{t+1}$ is the result of applying the optimal policy $\pi^*$ to transition dynamics $P$ of the system : $x_{t+1} ~P_\chi^{\tau^*} (\cdot \mid x_t)$ and similar
+$y_{t+1} ~ P_y^{\tau^*} (\cdot \mid y_t)$.
+The authors set $\chi' = \tau_\chi^*$ (compare to Equation \ref{contrastive loss}) and then define the total contrastive loss as:
 
--- Algorithm figure -- 
-\\
+\begin{equation}
+L_\theta (\mathcal{M}_\chi, \mathcal{M}_y) = \mathbb{E}_{y \sim  \tau_y^*} [l_\theta (\tilde{x}_y, y;\tau_\chi^*)] . 
+\end{equation}
 
---Trajectories and stuff --
-
-$x_t$ and $y_t$ are the single states in the optimal trajectories. $x_{t+1}$ is the result of applying the optimal policy $\pi^*$ to transition dynamics P of the system. $\tilde{x}$ is chosen as the most similar state to the given state y. Then the loss between the Markov processes $M_x$, $M_y$ are the expected value for y from the optimal trajectory of the contrastive loss (eq 4) of $\tilde{x}$ and $y$ w.r.t. to the optimal trajectory of $x$. So the loss becomes low, if we can conclude states $\tilde{x}$ that are close to its optimal trajectory from the similarity to y. 
+$\tilde{x}$ is chosen as the most similar state to the given state y: $\tilde{x} = \argmax_{x \in \tau_\chi ^ *} \Gamma (x,y) $ . Then the loss between the Markov processes $M_x$, $M_y$ are hence the expected value for y from the optimal trajectory of the contrastive loss (eq 4) of $\tilde{x}$ and $y$ w.r.t. to the optimal trajectory of $x$. So the loss becomes low, if we can conclude states $\tilde{x}$ that are close to its optimal trajectory from the similarity to y. 
 
 \section{Experiments from the paper}
 In this section we want to introduce the paper's main experiment: the jumping task from pixels. The authors also studied generalization on the dm control suite where agents have to ignore visual distraction. However, we want to focus our reproducibility study on the jumping task.
 \subsection{Jumping Task from Pixels: A Case Study}
--- Task Figure --
+-- Task Figure -- (Glejdis)
 n the jumping task, we have an agent that, learning from the image observations on pixel level, needs to jump over an obstacle. The agent can either go right or jump. To avoid a collision the agent needs to time the jump precisely. The environment can be adapted by changing the floor height and the position of the obstacle. Generalization is reached, when the agent becomes invariant to such changes.
 
--- Optimal trajectories figure --
+\begin{figure} 
+\centering
+\includegraphics[width = 0.8\textwidth]{figures/optimal_trajectories.png}
+\caption{\label{fig: optimal_trajectories}Opt traj}
+\end{figure}
 
 There are 26 different positions of the obstacle and 11 different values of the floor height. To stress generalization, the problem is then split into 18 training tasks and the remaining 268 tasks  are evaluation tasks. In the grid below, which corresponds only to the wide grid, each cell corresponds to a different jumping task. The training tasks are marked with the red-letter T. 
-\\
 
---Grid figure --
 
 \subsection{Classification of the problem}
 The states of the environment are discrete. This becomes apparent as we are able to classify all possible problems in a grid as combinations of obstacle position and floor height.
@@ -109,11 +118,25 @@ In the paper, three different grid configurations, that represent different styl
 \item The narrow grid tests out-of-distribution generalization via extrapolation
 \item The random grid evaluates generalization like supervised learning where the training and test samples are drawn i.i.d. (independently and identically distributed) 
 \end{itemize}
-All configurations are evaluated using the same hyperparameters that were tuned on the "wide" grid to show the robustness of PSEs to hyperparameter tuning. The authors compare the PSE to other regularization methods. Also the effect of data augmentation using RandConv is studied. The average performance across 100 runs is reported in the following table: 
+All configurations are evaluated using the same hyperparameters that were tuned on the "wide" grid to show the robustness of PSEs to hyperparameter tuning. The authors compare the PSE to other regularization methods. Also the effect of data augmentation using RandConv is studied. The average performance across 100 runs is reported in Figure \ref{fig: tabular_results}. 
+
+\begin{figure} 
+\centering
+\includegraphics[width = 0.8\textwidth]{figures/tabular_results.png}
+\caption{\label{fig: tabular_results}Tab results}
+\end{figure}
+
+PSEs outperform all other methods except for the case without data augmentation on the narrow grid. It is also apparent that PSEs work particularly well with data augmentation.
+The different grid types as well as the performance of PSEs + data augmentation are shown in the following figure. The letter T indicates a training task. Beige tiles are tasks that could be solved by PSE and black tiles are tasks that could not be solved by PSEs using data augmentation.
+
+\begin{figure} 
+\centering
+\includegraphics[width = 0.8\textwidth]{figures/grid_results.png}
+\caption{\label{fig: grid_results}Grid results}
+\end{figure}
+
 \bibliographystyle{plain}
 \bibliography{citations}
-
-
 
 \end{document}
 
