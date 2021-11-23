@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{agarwal2021contrastive}
+Rishabh Agarwal, Marlos~C. Machado, Pablo~Samuel Castro, and Marc~G. Bellemare.
+\newblock Contrastive behavioral similarity embeddings for generalization in
+  reinforcement learning, 2021.
+
+\bibitem{chen2020simple}
+Ting Chen, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton.
+\newblock A simple framework for contrastive learning of visual
+  representations, 2020.
+
+\bibitem{Hadsell06dimensionalityreduction}
+Raia Hadsell, Sumit Chopra, and Yann Lecun.
+\newblock Dimensionality reduction by learning an invariant mapping.
+\newblock In {\em In Proc. Computer Vision and Pattern Recognition Conference
+  (CVPR'06)}. IEEE Press, 2006.
+
+\bibitem{lee2020network}
+Kimin Lee, Kibok Lee, Jinwoo Shin, and Honglak Lee.
+\newblock Network randomization: A simple technique for generalization in deep
+  reinforcement learning, 2020.
+
+\bibitem{tian2021understanding}
+Yuandong Tian, Xinlei Chen, and Surya Ganguli.
+\newblock Understanding self-supervised learning dynamics without contrastive
+  pairs, 2021.
+
+\end{thebibliography}
