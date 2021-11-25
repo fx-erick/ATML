@@ -7,12 +7,13 @@
 \usepackage{slashbox}
 \usepackage{subfigure}
 \usepackage{amsmath}
+\let\circledS\undefined % here - PS
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{caption}
-\usepackage{subcaption}
-\input{assignment.sty}
 \def\code#1{\texttt{#1}}
+\usepackage{newunicodechar} 
+\DeclareUnicodeCharacter{FFFD}{?????}
 \usepackage{hyperref} 
 \DeclareMathOperator*{\argmax}{argmax}
 
@@ -45,7 +46,7 @@ At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praese
 \end{abstract}
 
 \section{Introduction}
-Reinforcement Learning is used in sequential decision making for training agents in complex tasks. The agent interacts with the environment which, based on the agent’s action, provides the agent with some reward (positive or negative). The agent then uses this feedback to update its behaviour with the goal of being optimal. Although current RL agents have demonstrated great potential in a variety of activities, they face difficulties in transferring these agent’s capabilities to new unseen tasks. This happens even when the tasks are semantically equivalent. In other words, existing reinforcement learning agents frequently learn policies that do not generalize well to environments different than those environments these agents are trained on.
+Reinforcement Learning is used in sequential decision making for training agents in complex tasks. The agent interacts with the environment which, based on the agent's action, provides the agent with some reward (positive or negative). The agent then uses this feedback to update its behaviour with the goal of being optimal. Although current RL agents have demonstrated great potential in a variety of activities, they face difficulties in transferring these agent's capabilities to new unseen tasks. This happens even when the tasks are semantically equivalent. In other words, existing reinforcement learning agents frequently learn policies that do not generalize well to environments different than those environments these agents are trained on.
 
 For example, the paper considered a jumping task, where we have an agent that needs to jump over an obstacle. The agent learns from image observations. In order for the agent to not collide with the obstacle, the agent needs to precisely time the jump at a particular distance from the obstacle. The various tasks consist of shifting the floor height or changing the obstacle position or both. If we train deep RL agents on some of these tasks where we vary the obstacle positions, they perform poorly at previously unseen locations (i.e. struggle to jump over the obstacle without hitting it). The challenge tackled in the paper is to generalize to unseen positions of the obstacle and floor heights in the test tasks, while using only a finite number of training tasks or environments sampled from a distribution of tasks.
 
@@ -148,13 +149,13 @@ where
     \item $\mathcal{W}_1 (d)$ is the Wasserstein distance between two probability distributions under a state metric $d$.
 \end{itemize}
 
-A very nice theoretical property of such metric is that the bisimulation distance between two states is an upper-bound on their optimal value difference: $|V^*(s)−V^*(t)| \leq d \sim (s,t)$. 
+A very nice theoretical property of such metric is that the bisimulation distance between two states is an upper-bound on their optimal value difference: $|V^*(s) - V^*(t)| \leq d \sim (s,t)$. 
 
 \begin{equation}\label{eq:BisimulationDistance}
     d_{\pi}(x,y) = |R^{\pi}(x) - R^{\pi}(x)| + \gamma \mathcal{W}_1(d_{\pi}) (P^{\pi}(\cdot | x), (P^{\pi}(\cdot | y)) 
 \end{equation}
 
-As it can be seen from equation \ref{eq:BisimulationDistance}, the bisimulation metric is a recursive equation with two terms. The first term calculates the reward difference, while the second term captures the long-term discounted future reward difference. Moreover, it defines the distance between two states x and y as the distance between expected rewards obtained when following policy π. The second term uses the Wasserstein-1 distance of the metric $d_{\pi}$. It quantifies the distance for the next state distributions following the policy $\pi$ at states x and y. A very easy illustration (\ref{fig:SandPile}) is to think of probability distributions as piles of sand. You can look at the sand pile as a probability mass. Then, the Wasserstein-1 distance calculates the dissimilarities between these piles of sand in terms of how much and how far we need to move the sand in order to transfer one pile into the other.
+As it can be seen from equation \ref{eq:BisimulationDistance}, the bisimulation metric is a recursive equation with two terms. The first term calculates the reward difference, while the second term captures the long-term discounted future reward difference. Moreover, it defines the distance between two states x and y as the distance between expected rewards obtained when following policy $\pi$. The second term uses the Wasserstein-1 distance of the metric $d_{\pi}$. It quantifies the distance for the next state distributions following the policy $\pi$ at states x and y. A very easy illustration (\ref{fig:SandPile}) is to think of probability distributions as piles of sand. You can look at the sand pile as a probability mass. Then, the Wasserstein-1 distance calculates the dissimilarities between these piles of sand in terms of how much and how far we need to move the sand in order to transfer one pile into the other.
 
 \begin{figure}[h]
     \centering
@@ -283,4 +284,3 @@ The different grid types as well as the performance of PSEs + data augmentation 
 \bibliography{citations}
 
 \end{document}
-
