@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ATML.aux
+The style file: plain.bst
+Database file #1: citations.bib
+Warning--empty journal in hadeep
+Warning--empty year in hadeep
+You've used 7 entries,
+            2118 wiz_defined-function locations,
+            525 strings with 5198 characters,
+and the built_in function-call counts, 2058 in all, are:
+= -- 173
+> -- 146
+< -- 0
++ -- 59
+- -- 50
+* -- 134
+:= -- 362
+add.period$ -- 17
+call.type$ -- 7
+change.case$ -- 46
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 62
+empty$ -- 151
+format.name$ -- 50
+if$ -- 413
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 3
+newline$ -- 33
+num.names$ -- 14
+pop$ -- 73
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 51
+stack$ -- 0
+substring$ -- 37
+swap$ -- 7
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 28
+warning$ -- 2
+while$ -- 14
+width$ -- 8
+write$ -- 62
+(There were 2 warnings)

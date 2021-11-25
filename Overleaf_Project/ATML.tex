@@ -72,6 +72,45 @@ In their approach, the authors train the agents to learn a representation where 
 
 
 \section{Theory and Concepts}
+
+\subsection{Generalization in RL}
+In supervised learning, training and test dataset are always held disjoint of each other.
+And the performance of a predictor is generally evaluated on unseen test data.
+In many RL benchmarks, like Atari, however the policy is evaluated on the same environment it was trained on and until now RL agents struggle to perform well on unseen environments \cite{lee2020network}.
+Overcoming this limitation and making RL applicable to more realistic task is an active field of research.
+Research on improving generalization in RL tries to produce "[...] algorithms whose policies have the desired
+robustness, transfer and adaptation properties, challenging the basic assumption that train and test will be identical" \cite{kirk2021survey}.
+\\
+The type of generalization can be classified with respect to the distribution that training and test environments are drawn from: \cite{kirk2021survey}
+\begin{itemize}
+\item In singleton environments train and test environment are identical; no generalization is involved.
+\item In i.i.d. generalization environments train and test environments are drawn from the same distribution: $P_{\text{train}} (C) = P_{\text{test}}(C)$.
+\item The most challenging form of generalization are o.o.d generalization environments. Training and test environments are drawn from distinct distributions: $P_{\text{train}} (C) \neq P_{\text{test}}(C)$.
+\end{itemize}
+Furthermore, \cite{kirk2021survey} categorizes current research on generalization in RL.
+The overview is shown in Figure \ref{fig: overview_research}. 
+The branch "increasing similarity" aims to modify or augment the training environment to be similar to the training set.
+"Handling differences" tries to address the difficulty that features will be different in the test environment. The paper we study tries to learn invariances: features that are not semantically important to the task should be discarded.
+The first two groups could also be applied to supervised learning. The last branch aims to increase generalization by improving the optimisation on the training environment, which is specific to RL.
+
+\begin{figure} 
+\centering
+\includegraphics[width = 0.8\textwidth]{figures/Overview_research.png}
+\caption{\label{fig: overview_research} Categorization of current research on generalization in RL according to \cite{kirk2021survey}. The studied paper \cite{agarwal2021contrastive} is an instance of learning invariances. }
+\end{figure}
+
+\subsection{State representation in RL} \label{sec: state repr}
+Besides generalization, sample-efficiency is a major challenge in RL.
+Learning successful policies from high-dimensional inputs like pixels of an image takes a huge amount of data.
+Therefore, learning lower dimensional latent representations of environments is an active area of research in RL.
+The agent then operates and learns policies in a latent space, which must be fully differentiable. \cite{hadeep}.
+A useful representation, in the context of RL, would encode only task-relevant information of the original space.
+There are well established dimensionality reduction methods like the Variational Auto-Encoder (VAE).
+However, such methods assume all information of the input space to be important, which is not true for RL environments.
+For instance, the task of jumping over block, depicted in Figure \ref{fig: optimal_trajectories}, is certainly invariant to the colour of the block.
+Yet, this information would be encoded using a VAE, hindering generalization to the semantically identical task with a block of different colour.
+Actively ignoring information that is irrelevant to the task is hence very desirable and can enhance generalization.
+\cite{hadeep} \cite{kirk2021survey}
 \subsection{The $\pi$-bisimulation and Policy Similarity Metric} \label{sec: PSM}
 In the paper, the authors learn representations that encode behavioural similarity across states. To have a better understanding of the behavioural similarity, think of an agent who needs to reach spinach at the supermarket while maintaining social distancing of 6 feet. In the first environment to the left, the agent takes two actions to the right followed by two actions down. Now we look at the second environment on the right with a slightly different layout but where the agent takes the same actions (two steps right and two steps down) (as seen in figure \ref{fig:BehavioralSimilarity}). This is behavioural similarity where actions in the current state as well as in the future states are similar.
 

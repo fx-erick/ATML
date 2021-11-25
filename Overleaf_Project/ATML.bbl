@@ -10,11 +10,21 @@ Ting Chen, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton.
 \newblock A simple framework for contrastive learning of visual
   representations, 2020.
 
+\bibitem{hadeep}
+Huy Ha, Sian~Lee Kitt, and William Zheng.
+\newblock Deep bisimulation dreaming: Combating distractions with state
+  abstractions.
+
 \bibitem{Hadsell06dimensionalityreduction}
 Raia Hadsell, Sumit Chopra, and Yann Lecun.
 \newblock Dimensionality reduction by learning an invariant mapping.
 \newblock In {\em In Proc. Computer Vision and Pattern Recognition Conference
   (CVPR'06)}. IEEE Press, 2006.
+
+\bibitem{kirk2021survey}
+Robert Kirk, Amy Zhang, Edward Grefenstette, and Tim Rockt{\"a}schel.
+\newblock A survey of generalisation in deep reinforcement learning.
+\newblock {\em arXiv preprint arXiv:2111.09794}, 2021.
 
 \bibitem{lee2020network}
 Kimin Lee, Kibok Lee, Jinwoo Shin, and Honglak Lee.
