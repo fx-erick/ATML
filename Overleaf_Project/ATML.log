@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.12)  25 NOV 2021 16:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.12)  26 NOV 2021 10:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1205,41 +1205,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
-<figures/image4.png, id=112, 602.25pt x 209.78375pt>
+<figures/image4.png, id=112, 582.175pt x 202.7575pt>
 File: figures/image4.png Graphic file (type png)
 <use figures/image4.png>
 Package pdftex.def Info: figures/image4.png  used on input line 164.
-(pdftex.def)             Requested size: 201.65753pt x 70.24356pt.
-<figures/image5.png, id=113, 684.5575pt x 369.38pt>
+(pdftex.def)             Requested size: 201.65753pt x 70.22984pt.
+<figures/image5.png, id=113, 848.16875pt x 456.70625pt>
 File: figures/image5.png Graphic file (type png)
 <use figures/image5.png>
 Package pdftex.def Info: figures/image5.png  used on input line 169.
-(pdftex.def)             Requested size: 224.06544pt x 120.90378pt.
+(pdftex.def)             Requested size: 224.06544pt x 120.65025pt.
 [4 <./figures/image3.png> <./figures/image4.png> <./figures/image5.png>]
-<figures/image6.png, id=128, 303.1325pt x 209.78375pt>
+<figures/image6.png, id=130, 420.57124pt x 302.12875pt>
 File: figures/image6.png Graphic file (type png)
 <use figures/image6.png>
 Package pdftex.def Info: figures/image6.png  used on input line 201.
-(pdftex.def)             Requested size: 224.06544pt x 155.06787pt.
-<figures/image7.png, id=130, 505.89pt x 198.7425pt>
+(pdftex.def)             Requested size: 224.06544pt x 160.9619pt.
+<figures/image7.png, id=132, 721.69624pt x 257.96375pt>
 File: figures/image7.png Graphic file (type png)
 <use figures/image7.png>
 Package pdftex.def Info: figures/image7.png  used on input line 212.
-(pdftex.def)             Requested size: 224.06544pt x 88.02618pt.
+(pdftex.def)             Requested size: 224.06544pt x 80.08995pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/image8.png, id=132, 540.0175pt x 283.0575pt>
+<figures/image8.png, id=134, 710.655pt x 376.40625pt>
 File: figures/image8.png Graphic file (type png)
 <use figures/image8.png>
 Package pdftex.def Info: figures/image8.png  used on input line 219.
-(pdftex.def)             Requested size: 224.06544pt x 117.44507pt.
+(pdftex.def)             Requested size: 224.06544pt x 118.67772pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5 <./figures/image6.png>] [6 <./figures/image7.png> <./figures/image8.png>]
-<figures/Learning_architecture.png, id=160, 2261.44875pt x 970.62625pt>
+<figures/Learning_architecture.png, id=164, 2261.44875pt x 970.62625pt>
 File: figures/Learning_architecture.png Graphic file (type png)
 <use figures/Learning_architecture.png>
 Package pdftex.def Info: figures/Learning_architecture.png  used on input line 
@@ -1247,7 +1247,7 @@ Package pdftex.def Info: figures/Learning_architecture.png  used on input line
 (pdftex.def)             Requested size: 358.50609pt x 153.86674pt.
 
 [7 <./figures/Learning_architecture.png>]
-<figures/optimal_trajectories.png, id=182, 1879.02pt x 711.65875pt>
+<figures/optimal_trajectories.png, id=186, 1879.02pt x 711.65875pt>
 File: figures/optimal_trajectories.png Graphic file (type png)
 <use figures/optimal_trajectories.png>
 Package pdftex.def Info: figures/optimal_trajectories.png  used on input line 2
@@ -1260,15 +1260,15 @@ Overfull \hbox (0.28311pt too wide) in paragraph at lines 302--303
  []
 
 [8 <./figures/optimal_trajectories.png>]
-<figures/tabular_results.png, id=194, 1496.59125pt x 471.7625pt>
+<figures/tabular_results.png, id=197, 1496.59125pt x 471.7625pt>
 File: figures/tabular_results.png Graphic file (type png)
 <use figures/tabular_results.png>
-Package pdftex.def Info: figures/tabular_results.png  used on input line 308.
+Package pdftex.def Info: figures/tabular_results.png  used on input line 310.
 (pdftex.def)             Requested size: 358.50609pt x 113.00935pt.
-<figures/grid_results.png, id=200, 1749.53625pt x 326.21875pt>
+<figures/grid_results.png, id=204, 1749.53625pt x 326.21875pt>
 File: figures/grid_results.png Graphic file (type png)
 <use figures/grid_results.png>
-Package pdftex.def Info: figures/grid_results.png  used on input line 318.
+Package pdftex.def Info: figures/grid_results.png  used on input line 321.
 (pdftex.def)             Requested size: 448.1309pt x 83.55551pt.
  (./ATML.bbl
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
@@ -1288,7 +1288,7 @@ Package rerunfilecheck Info: File `ATML.out' has not changed.
 Here is how much of TeX's memory you used:
  13712 strings out of 478994
  204987 string characters out of 5858183
- 515462 words of memory out of 5000000
+ 515463 words of memory out of 5000000
  30836 multiletter control sequences out of 15000+600000
  554130 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1309,9 +1309,9 @@ r/local/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local
 ve/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on ATML.pdf (9 pages, 2251780 bytes).
+Output written on ATML.pdf (9 pages, 2838818 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
+ 274 PDF objects out of 1000 (max. 8388607)
  209 compressed objects within 3 object streams
  55 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
