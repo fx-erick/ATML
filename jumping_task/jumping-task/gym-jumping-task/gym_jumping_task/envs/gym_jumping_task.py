@@ -328,6 +328,8 @@ class JumpTaskEnv(gym.Env):
 
     pygame.display.flip()
 
+    return pygame.image
+
 def test(args):
   env = JumpTaskEnv(scr_w=args.scr_w, scr_h=args.scr_h, floor_height=args.floor_height,
                     agent_w=args.agent_w, agent_h=args.agent_h, agent_init_pos=args.agent_init_pos, agent_speed=args.agent_speed,

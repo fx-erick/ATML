@@ -94,6 +94,8 @@ flags.DEFINE_integer(
 flags.DEFINE_string(
     'train_dir', None, 'Directory in which the training '
     'checkpoints and tensorboard summaries are saved')
+flags.DEFINE_string(
+    'width', "wide", 'Width of training grid ')
 flags.DEFINE_integer(
     'max_checkpoints_to_keep', 1, 'Indicates the maximum '
     'number of recent checkpoint files to keep.')
@@ -123,6 +125,7 @@ flags.DEFINE_bool('use_l2_loss', False, 'Whether to use l2 loss for learning '
                   'embeddings or the contrastive loss.')
 flags.DEFINE_bool('use_bisim', False, 'Whether to use pi*-bisimulation metric'
                   'instead of the action similarity metric.')
+
 
 
 @flags.multi_flags_validator(['use_l2_loss', 'projection'],
@@ -250,10 +253,13 @@ def train_agent(train_dir, measurements=None):
       ckpt_dir=osp.join(train_dir, 'model'),
       step=tf.Variable(1, trainable=False),
       optimizer=optimizer,
-      restore=True)
+      restore=False)
   # Log summaries for the training and validation results
+  method = "bisim-" if FLAGS.use_bisim else "pse-"
+  augment = "-rand-conv-" if FLAGS.rand_conv else "-non-rand-"
+  file_name = method + FLAGS.width + augment + "-seed-" + str(FLAGS.seed) + ".v2"
   summary_writer = tf.summary.create_file_writer(
-      osp.join(train_dir, 'tb_log'), flush_millis=5000)
+      osp.join(train_dir, 'tb_log'), flush_millis=5000, filename_suffix = file_name )
   avg_losses = {
       name: tf.keras.metrics.Mean(name=name, dtype=tf.float32) for name in [
           'total_loss', 'cross_entropy_loss', 'l2_regularization_loss',
