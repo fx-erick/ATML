@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.12)  26 NOV 2021 10:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.12)  30 NOV 2021 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1239,42 +1239,44 @@ Package pdftex.def Info: figures/image8.png  used on input line 219.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5 <./figures/image6.png>] [6 <./figures/image7.png> <./figures/image8.png>]
-<figures/Learning_architecture.png, id=164, 2261.44875pt x 970.62625pt>
+<figures/Learning_architecture.png, id=167, 2261.44875pt x 970.62625pt>
 File: figures/Learning_architecture.png Graphic file (type png)
 <use figures/Learning_architecture.png>
 Package pdftex.def Info: figures/Learning_architecture.png  used on input line 
-260.
+286.
 (pdftex.def)             Requested size: 358.50609pt x 153.86674pt.
 
-[7 <./figures/Learning_architecture.png>]
-<figures/optimal_trajectories.png, id=186, 1879.02pt x 711.65875pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/optimal_trajectories.png, id=173, 1879.02pt x 711.65875pt>
 File: figures/optimal_trajectories.png Graphic file (type png)
 <use figures/optimal_trajectories.png>
 Package pdftex.def Info: figures/optimal_trajectories.png  used on input line 2
-83.
+98.
 (pdftex.def)             Requested size: 358.50609pt x 135.78123pt.
-
-Overfull \hbox (0.28311pt too wide) in paragraph at lines 302--303
+[7] [8 <./figures/Learning_architecture.png> <./figures/optimal_trajectories.pn
+g>]
+Overfull \hbox (0.28311pt too wide) in paragraph at lines 316--317
 []\T1/mdput/m/n/10 The ran-dom grid eval-u-ates gen-er-al-iz-a-tion like su-per
 -vised learn-ing where the train-ing and test samples
  []
 
-[8 <./figures/optimal_trajectories.png>]
-<figures/tabular_results.png, id=197, 1496.59125pt x 471.7625pt>
+<figures/tabular_results.png, id=198, 1496.59125pt x 471.7625pt>
 File: figures/tabular_results.png Graphic file (type png)
 <use figures/tabular_results.png>
-Package pdftex.def Info: figures/tabular_results.png  used on input line 310.
+Package pdftex.def Info: figures/tabular_results.png  used on input line 324.
 (pdftex.def)             Requested size: 358.50609pt x 113.00935pt.
-<figures/grid_results.png, id=204, 1749.53625pt x 326.21875pt>
+<figures/grid_results.png, id=205, 1749.53625pt x 326.21875pt>
 File: figures/grid_results.png Graphic file (type png)
 <use figures/grid_results.png>
-Package pdftex.def Info: figures/grid_results.png  used on input line 321.
+Package pdftex.def Info: figures/grid_results.png  used on input line 335.
 (pdftex.def)             Requested size: 448.1309pt x 83.55551pt.
- (./ATML.bbl
+(./ATML.bbl
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
 (Font)              scaled to size 8.46002pt on input line 21.
-) [9 <./figures/tabular_results.png> <./figures/grid_results.png>] (./ATML.aux)
-
+ [9 <./figures/tabular_results.png> <./figures/grid_results.png>])
+[10] (./ATML.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1286,10 +1288,10 @@ Package rerunfilecheck Info: File `ATML.out' has not changed.
  )
 (\end occurred when \ifx on line 16 was incomplete) 
 Here is how much of TeX's memory you used:
- 13712 strings out of 478994
- 204987 string characters out of 5858183
- 515463 words of memory out of 5000000
- 30836 multiletter control sequences out of 15000+600000
+ 13714 strings out of 478994
+ 205010 string characters out of 5858183
+ 521524 words of memory out of 5000000
+ 30837 multiletter control sequences out of 15000+600000
  554130 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,7n,131p,967b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1309,10 +1311,10 @@ r/local/texlive/2021/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local
 ve/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on ATML.pdf (9 pages, 2838818 bytes).
+Output written on ATML.pdf (10 pages, 2840726 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 279 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 
