@@ -1,9 +1,22 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{agarwal2021contrastive}
 Rishabh Agarwal, Marlos~C. Machado, Pablo~Samuel Castro, and Marc~G. Bellemare.
 \newblock Contrastive behavioral similarity embeddings for generalization in
   reinforcement learning, 2021.
+
+\bibitem{castro2020scalable}
+Pablo~Samuel Castro.
+\newblock Scalable methods for computing state similarity in deterministic
+  markov decision processes.
+\newblock {\em Proceedings of the AAAI Conference on Artificial Intelligence},
+  2020.
+
+\bibitem{pscsWebsite}
+Pablo~Samuel Castro.
+\newblock Scalable methods for computing state similarity in deterministic
+  mdps.
+\newblock \url{https://psc-g.github.io/posts/research/rl/scalable/}, 2021.
 
 \bibitem{chen2020simple}
 Ting Chen, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton.
@@ -30,6 +43,25 @@ Robert Kirk, Amy Zhang, Edward Grefenstette, and Tim Rockt{\"a}schel.
 Kimin Lee, Kibok Lee, Jinwoo Shin, and Honglak Lee.
 \newblock Network randomization: A simple technique for generalization in deep
   reinforcement learning, 2020.
+
+\bibitem{puterman2005markov}
+M~Puterman.
+\newblock Markov decision processes: Discrete stochastic dynamic programming.
+\newblock {\em Wiley Series in Probability and Statistics}, 2005.
+
+\bibitem{github_contrastive_similarity}
+Marlos C.~Machado Rishabh~Agarwal.
+\newblock Contrastive behavioural similarity embeddings for generalization in
+  reinforcement learning.
+\newblock \url{https://agarwl.github.io/pse/pdfs/slides.pdf}, 2021.
+
+\bibitem{slidelive}
+Marlos C.~Machado Rishabh~Agarwal.
+\newblock Contrastive behavioural similarity embeddings for generalization in
+  reinforcement learning.
+\newblock
+  \url{https://slideslive.com/38942373/contrastive-behavioral-similarity-embeddings-for-generalization-in-reinforcement-learning},
+  2021.
 
 \bibitem{tian2021understanding}
 Yuandong Tian, Xinlei Chen, and Surya Ganguli.

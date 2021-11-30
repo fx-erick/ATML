@@ -117,7 +117,7 @@ In the paper, the authors learn representations that encode behavioural similari
 \begin{figure}[h]
     \centering
     \includegraphics[width = \linewidth]{figures/image3.png}
-    \caption{Behavioral similarity}
+    \caption{Behavioral similarity \cite{github_contrastive_similarity} }
     \label{fig:BehavioralSimilarity}
 \end{figure}
 
@@ -135,12 +135,13 @@ The Markov Decision Process (MDP) is defined as a 5-tuple M = (S, A, R, P, $\gam
     \begin{itemize}
         \item $P(x,a,x')$ is the probability that action $a$ in state $x$ at time $t$ will lead to a state $x'$ at $t+1$.
     \end{itemize}
-    \item $\gamma \in  [0, 1)$  is the discount factor which is used to generate a discounted reward.
+    \item $\gamma \in  [0, 1)$  is the discount factor which is used to generate a discounted reward. \cite{puterman2005markov}
 \end{itemize}
 
 Each state $x$ encodes sufficient information about the environment such that an agent can learn how to behave in a consistent manner. Policy $\pi$ is a controller that helps us select the actions to maximize expected return $\mathbb{E}_{a_{t}\sim \pi(\cdot|x)} [\sum_t \gamma^t R(x_t,a_t)]$. A policy $\pi$(·$|$x) maps states $x \in X$ to distributions over actions. \\
 
-In RL, the goal is to find an optimal policy $\pi^*$ that maximizes the cumulative expected return starting from an initial state $x_0$. In this paper, the goal is to learn a policy that generalizes well across related environments. \\
+In RL, the goal is to find an optimal policy $\pi^*$ that maximizes the cumulative expected return starting from an initial state $x_0$. In this paper, the goal is to learn a policy that generalizes well across related environments. \cite{agarwal2021contrastive}
+ \\
 
 An \textbf{equivalence relation}, $E \subset S \times S$, is a bisimulation relation if wherever 2 states, $(s,t) \in E$, are considered bisimilar (denoted $s \sim t$) if the following properties hold:
 
@@ -151,7 +152,7 @@ An \textbf{equivalence relation}, $E \subset S \times S$, is a bisimulation rela
     \end{itemize}
     \item Transition with equal probability to bisimulation equivalence classes:
     \begin{itemize}
-        \item $\forall a \in A, \forall c \in S_E, P(s,a)(c) = \sum_{s'\in c} P(s,a)(s') = P(t,a)(c)$
+        \item $\forall a \in A, \forall c \in S_E, P(s,a)(c) = \sum_{s'\in c} P(s,a)(s') = P(t,a)(c)$ \cite{castro2020scalable}
     \end{itemize}
 \end{enumerate}
 
@@ -169,7 +170,7 @@ In other words, two states are bisimilar if they have similar expected rewards a
         \includegraphics[width = 0.5\linewidth]{figures/image5.png}
         \label{}
     \end{subfigure}
-    \caption{Bisimulation equivalence relation}
+    \caption{Bisimulation equivalence relation \cite{pscsWebsite}}
     \label{fig:BisimulationEquivalence}
 \end{figure}
 
@@ -187,42 +188,47 @@ where
     \item $P:S \times A \rightarrow \Delta(S)$ is the transition function.
     \item $\mathcal{W}_1 (d)$ is the Wasserstein distance between two probability distributions under a state metric $d$.
 \end{itemize}
+\cite{castro2020scalable}
 
 A very nice theoretical property of such metric is that the bisimulation distance between two states is an upper-bound on their optimal value difference: $|V^*(s) - V^*(t)| \leq d \sim (s,t)$. 
 
 \begin{equation}\label{eq:BisimulationDistance}
     d_{\pi}(x,y) = |R^{\pi}(x) - R^{\pi}(x)| + \gamma \mathcal{W}_1(d_{\pi}) (P^{\pi}(\cdot | x), (P^{\pi}(\cdot | y)) 
 \end{equation}
+\cite{castro2020scalable}
 
 As it can be seen from equation \ref{eq:BisimulationDistance}, the bisimulation metric is a recursive equation with two terms. The first term calculates the reward difference, while the second term captures the long-term discounted future reward difference. Moreover, it defines the distance between two states x and y as the distance between expected rewards obtained when following policy $\pi$. The second term uses the Wasserstein-1 distance of the metric $d_{\pi}$. It quantifies the distance for the next state distributions following the policy $\pi$ at states x and y. A very easy illustration (\ref{fig:SandPile}) is to think of probability distributions as piles of sand. You can look at the sand pile as a probability mass. Then, the Wasserstein-1 distance calculates the dissimilarities between these piles of sand in terms of how much and how far we need to move the sand in order to transfer one pile into the other.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width = 0.5\linewidth]{figures/image6.png}
-    \caption{Sand Pile analogy of Wasserstein metric}
+    \caption{Sand Pile analogy of Wasserstein metric \cite{github_contrastive_similarity}}
     \label{fig:SandPile}
 \end{figure}
 
 There are a few drawbacks of using reward difference in bisimulation for measuring state similarities:
 
 \begin{enumerate}
-    \item Two MDPs can have the same policies/behaviours but different expected rewards. For example, consider the two MDPs shown in figure \ref{fig:TwoMDP}. Once the agent has taken the action to eat cake, the agent should stop, because eating cake is good, but eating too much cake is bad. The rewards are different in these two MDPs. For certain values of these rewards, the bisimulation distance captures correct state similarity.
+    \item Two MDPs can have the same policies/behaviours but different expected rewards. For example, consider the two MDPs shown in figure \ref{fig:TwoMDP}. Once the agent has taken the action to eat cake, the agent should stop, because eating cake is good, but eating too much cake is bad. The rewards are different in these two MDPs. For certain values of these rewards, the bisimulation distance captures correct state similarity. \cite{slidelive}
 \begin{figure}[h]
     \centering
     \includegraphics[width = 0.5\linewidth]{figures/image7.png}
-    \caption{Same policies different rewards}
+    \caption{Same policies different rewards \cite{agarwal2021contrastive}}
     \label{fig:TwoMDP}
 \end{figure}
-    \item Two states can have the same long term expected reward but different optimal policies. For instance,  figure \ref{fig:ThreeJump} illustrates three jumping tasks with different positions of the obstacles. The three states with a yellow boundary have the same expected rewards, which means that the bisimulation value is 0. However, as illustrated with the little arrow, the optimal action in the first task in the highlighted is to jump, while in the other tasks the optimal action is to go right.
+    \item Two states can have the same long term expected reward but different optimal policies. For instance,  figure \ref{fig:ThreeJump} illustrates three jumping tasks with different positions of the obstacles. The three states with a yellow boundary have the same expected rewards, which means that the bisimulation value is 0. However, as illustrated with the little arrow, the optimal action in the first task in the highlighted is to jump, while in the other tasks the optimal action is to go right. 
+\cite{slidelive}
 \begin{figure}[h]
     \centering
     \includegraphics[width = 0.5\linewidth]{figures/image8.png}
-    \caption{Same reward different policies}
+    \caption{Same reward different policies \cite{github_contrastive_similarity}}
     \label{fig:ThreeJump}
 \end{figure}
     \item Pessimistic: the maximum is considering the worst possible case
     \item Computational expense: Bisimulation metrics have been solved using dynamic programming, but as this requires updating the metric estimate for all state-action pairs at every iteration, it is computationally expensive. This means computing the Wasserstein distance $|S|\times|A|$ times at each iteration.
     \item Full state enumerability: Existing methods for computing/approximating bisimulation metrics require full state enumerability (countability).
+    
+\cite{castro2020scalable}
 \end{enumerate}
 
 Therefore, to address these issues, in this paper, the $\pi$-bisimulation metric, which is based on the bisimulation metric, is being used. In contrast to bisimulation metrics, which is built on reward differences, $\pi$-bisimulation metrics are built on differences in optimal policies. The absolute reward differences are replaced by policy differences. Furthermore, as the goal is to perform well in previously unseen environments, we are interested in optimal behaviour, and so, we use $\pi^*$ as the grounding policy. This yields Policy Similarity Metric (PSM).
@@ -230,10 +236,13 @@ Therefore, to address these issues, in this paper, the $\pi$-bisimulation metric
 \begin{equation}
     d_{\pi}(x,y) = DIST(\pi^*(x), \pi^*(y)) + \gamma \mathcal{W}_1(d^*) (P^{\pi^*}(\cdot | x), (P^{\pi^*}(\cdot | y)) 
 \end{equation}
+\cite{castro2020scalable}
 
-In PSM, states are considered similar when the optimal policies in these states as well as future states are similar. The DIST term captures the local optimal behaviour differences, while the Wasserstein term captures the long-term optimal behaviour differences. Moreover, the discount factor $\gamma$ assigns the weights.
+In PSM, states are considered similar when the optimal policies in these states as well as future states are similar. The DIST term captures the local optimal behaviour differences, while the Wasserstein term captures the long-term optimal behaviour differences. Moreover, the discount factor $\gamma$ assigns the weights. \cite{castro2020scalable}
 
-Now, take into consideration transferring an optimal policy from one to another environment using PSM. We do this by finding the nearest neighbour x for each state y. This nearest neighbour has the minimum PSM distance to y. To define the transfer policy at y, the policy at x can be used. If we use this nearest neighbour transfer scheme, we have the advantage of an upper bound on the suboptimality of policies or optimal policies transferred from one environment to another by PSM, in contrast to bisimulation metric where we do not have such feature.  This illustrates how PSM provides a way of lifting generalization across inputs as a supervised learning problem to generalization across environments. As we aim to achieve a good generalization, we learn policy similarity embeddings that encode this PSM. This is done by adapting SimCLR, which is a constructive method for learning embeddings of image inputs.
+Now, take into consideration transferring an optimal policy from one to another environment using PSM. We do this by finding the nearest neighbour x for each state y. This nearest neighbour has the minimum PSM distance to y. To define the transfer policy at y, the policy at x can be used. If we use this nearest neighbour transfer scheme, we have the advantage of an upper bound on the suboptimality of policies or optimal policies transferred from one environment to another by PSM, in contrast to bisimulation metric where we do not have such feature. 
+\cite{castro2020scalable}
+This illustrates how PSM provides a way of lifting generalization across inputs as a supervised learning problem to generalization across environments. As we aim to achieve a good generalization, we learn policy similarity embeddings that encode this PSM. This is done by adapting SimCLR, which is a constructive method for learning embeddings of image inputs.
 
 \subsection{Policy Similarity Embeddings - PSEs}
 Aiming for generalization of learned policies to related environments, the authors represent states in an embedding space, where closeness of states correlates with similar optimal policies. The embedding is built by self-supervised contrastive learning. Self-supervised learning refers to learning techniques that work without explicit annotations of the data. \cite{tian2021understanding} Instead, feedback signals are generated from the data itself. In this case this feedback comes from the policy similarity metric.   The contrastive instance of self-supervised learning works with positive pairs that are similar to each other, and negative or dissimilars pairs. \cite{Hadsell06dimensionalityreduction} The policy similarity metric d (introduced in Section \ref{sec: PSM}) is transformed to the similarity measure $\Gamma$ using the Gaussian kernel:
