@@ -16,6 +16,9 @@
 \DeclareUnicodeCharacter{FFFD}{?????}
 \usepackage{hyperref} 
 \DeclareMathOperator*{\argmax}{argmax}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{pifont}
 
 \begin{document}
 
@@ -361,6 +364,68 @@ Due to time and computing power allocation in the HPC cluster constraints, we re
 Additionally, for visualization purposes, we have also obtained the training log plots and the training grid visualizations that we can compare with the figures found within the paper.
 
 Talk about our result vs publication.
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.3\linewidth]{figures/narrow_without_data_aug.png}
+        \label{}
+    \end{subfigure}%
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.3\linewidth]{figures/wide_without_data_aug.png}
+        \label{}
+    \end{subfigure}%
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.3\linewidth]{figures/random_without_data_aug.png}
+        \label{}
+    \end{subfigure}%
+    \caption{Test performance curves in the setting \textbf{without data augmentation} on the wide, narrow, and random grids. We plot the median performance across 5 runs. Shaded regions show 25 and 75 percentiles}
+    \label{fig:ResultWithoutDataAug}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.3\linewidth]{figures/narrow_with_data_aug.png}
+        \label{}
+    \end{subfigure}%
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.3\linewidth]{figures/wide_with_data_aug.png}
+        \label{}
+    \end{subfigure}%
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.3\linewidth]{figures/random_with_data_aug.png}
+        \label{}
+    \end{subfigure}%
+    \caption{Test performance curves in the setting \textbf{with data augmentation} on the wide, narrow, and random grids. We plot the median performance across 5 runs. Shaded regions show 25 and 75 percentiles}
+    \label{fig:ResultWithDataAug}
+\end{figure}
+
+\begin{table}[h]
+\caption{Percentage (\%) of test tasks solved by different methods without and with data augmentation. The wide, narrow, and random grids. We report average performance across 5 runs with different random initializations, with standard deviation between parentheses}
+  \centering
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{c*{3}{c}{c}} \hline
+    \multirow{2}{*}{Data Augmentation} & \multirow{2}{*}{Method} & \multicolumn{3}{c}{Grid Configuration (\%)}\\
+    \cline{3-5} & & Wide & Narrow & Random\\
+    \hline
+    \multirow{3}{*}{\ding{55}} & Dropout and $l_2$ reg & 6.86(2.27) & 1.86(1.05) & 5.82(1.64)\\
+     & Bisimulation Transfer & 17.91(0.23) & \textbf{14.55}(1.33) & 14.77(3.96)\\
+     &  PSEs & \textbf{18.58}(2.35) & 7.91(1.25) & \textbf{23.65}(5.95)\\
+    \hline
+    \multirow{3}{*}{\ding{51}} & RandConv & 27.38(7.95) & 32.23(5.04) & 36.26(10.43)\\
+     & RandConv + $\pi^*$-bisimulation & 18.35(0.72) & 28.58(14.13) & 29.62(13.58)\\
+     & RandConv + PSEs & \textbf{93.58}(4.01) & \textbf{50.97}(3.05) & \textbf{78.20}(8.08)\\
+    \hline
+  \end{tabular}
+  \label{table:Rec_bisection}
+\end{table}
+
 
 \subsection{Jumping Task from Pixels : Hyperparameter Sensitivity tests}
 The default hyperparameters used by the author for the jumping taks pixels are summarized in the following table. 
