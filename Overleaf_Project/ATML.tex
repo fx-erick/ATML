@@ -440,6 +440,31 @@ The default hyperparameters used by the author for the jumping taks pixels are s
 
 These hyperparameters were obtained from validation experiments done by the author with wide grid training grids, random convolutions and PSE loss, whereby the chosen values result to the best possible performance of the agent in that specific setting. We are interested in investigating the sensitivity of four of the hyperparameters used, namely learning rate, temperature, soft-coupling temperature, and $\alpha$. We set a 5\% decrease and increase to each one of these four hyperparameter values while keeping the remaining hyperparameters as the default chosen values. We then compare the performance, which in this case is the number of tasks solved, with the default wide grid result obtained from the previous subsection. Due to time and computing power allocation in the HPC cluster constraints, each hyperparameter sensitivity test is done in 3 runs. The overall sumamry of the effect of each hyperparameter to the performance of the agent is summarized in the following table.
 
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.25\linewidth]{figures/alpha.png}
+        \label{}
+    \end{subfigure}%
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.25\linewidth]{figures/learning_rate.png}
+        \label{}
+    \end{subfigure}\\
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.25\linewidth]{figures/temperature.png}
+        \label{}
+    \end{subfigure}%
+    \begin{subfigure}
+        \centering
+        \includegraphics[width = 0.25\linewidth]{figures/soft_coupling_temperature.png}
+        \label{}
+    \end{subfigure}
+    \caption{}
+    \label{fig:HyperParameterTuning}
+\end{figure}
 
 \subsection{DM Control Tasks}
 The author also published their code for DM Control Tasks, whereby the generalization ability of PSE are tested with 6 different environments with continuous states and actions, namely Ball in Cup Catch, Cartpole+Swingup, Cheetah-Run, Finger-Spin, Reacher-Easy, and Walker-Walk. The model are trained in environments with 2 different video distractions obtained from DAVIS dataset playing in the background and then evaluated against environments with 30 other video distractions from DAVIS dataset in the background. The author utilizes Soft Actor Critic Network with clipped double-Q network for the actor network. The loss term combines four loss terms, namely actor loss, critic loss, temperature loss, and PSE loss. Optimal policies are approximated by policies from each environment obtained after 500000 iteration steps. 
