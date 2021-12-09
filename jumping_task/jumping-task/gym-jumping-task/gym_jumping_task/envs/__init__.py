@@ -1,1 +1,5 @@
 from gym_jumping_task.envs.gym_jumping_task import JumpTaskEnv
+from gym_jumping_task.envs.jumping_colors_task import OBSTACLE_COLORS
+from gym_jumping_task.envs.jumping_colors_task import JumpTaskEnvWithColors
+
+

@@ -28,6 +28,7 @@ from jumping_task import gym_helpers
 class OBSTACLE_COLORS(enum.Enum):  # pylint: disable=invalid-name
   RED = 0
   GREEN = 1
+
 JUMP_DISTANCE = 13
 
 
@@ -89,7 +90,8 @@ def _generate_imitation_data(min_obstacle_position=20,
           position, height, obstacle_color=obstacle_color)
       observations = stack_obs(observations)
       all_data[position][height] = (observations, actions, rewards)
-    logging.info('Obstacle position %d done.', position)
+    logging.info('Obstacle position {} done.'.format(position))
+
   return all_data
 
 
@@ -101,17 +103,21 @@ def generate_imitation_data(min_obstacle_position=20,
   """Generate imitation data with uncolored or colored obstacles."""
   imitation_data = {}
   colors = OBSTACLE_COLORS if use_colors else ['WHITE']
+  counter = 0
   for obstacle_color in colors:
     if isinstance(obstacle_color, str):
       color_key = obstacle_color
     else:
       color_key = obstacle_color.name
+
     imitation_data[color_key] = _generate_imitation_data(
         min_obstacle_position=min_obstacle_position,
         max_obstacle_position=max_obstacle_position,
         min_floor_height=min_floor_height,
         max_floor_height=max_floor_height,
         obstacle_color=obstacle_color)
+    counter += 1
+
   return imitation_data
 
 

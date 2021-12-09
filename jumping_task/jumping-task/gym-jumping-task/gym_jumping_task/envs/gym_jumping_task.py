@@ -78,7 +78,7 @@ class JumpTaskEnv(gym.Env):
               agent_w=5, agent_h=10, agent_init_pos=0, agent_speed=1,
               obstacle_position=30, obstacle_size=(9, 10),
               rendering=False, zoom=8, slow_motion=False, with_left_action=False,
-              max_number_of_steps=600, two_obstacles=False, finish_jump=False):
+              max_number_of_steps=600, two_obstacles=False, finish_jump=False, use_colors=False):
 
     # Initialize seed.
     self.seed(seed)
@@ -87,7 +87,10 @@ class JumpTaskEnv(gym.Env):
     self.scr_w = scr_w
     self.scr_h = scr_h
     self.state_shape = [scr_w, scr_h]
-
+    if use_colors:
+      self.state_shape = [scr_w, scr_h, 3]
+    else:
+      self.state_shape = [scr_w, scr_h]
     self.rendering = rendering
     self.zoom = zoom
     if rendering:
@@ -289,7 +292,7 @@ class JumpTaskEnv(gym.Env):
     elif exited:
       reward += self.rewards['exit']
     self.step_id += 1
-    return self.get_state(), reward, self.done, {}
+    return self.get_state(), reward, self.done, {'collision': killed}
 
   def render(self):
     ''' Render the screen game using pygame.
