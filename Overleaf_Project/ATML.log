@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.12)  9 DEC 2021 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.12)  9 DEC 2021 19:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1435,23 +1435,23 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: figures/alpha.png Graphic file (type png)
 <use figures/alpha.png>
 Package pdftex.def Info: figures/alpha.png  used on input line 447.
-(pdftex.def)             Requested size: 112.03271pt x 109.42383pt.
+(pdftex.def)             Requested size: 156.84854pt x 153.19456pt.
 <figures/learning_rate.png, id=290, 403.2666pt x 393.8715pt>
 File: figures/learning_rate.png Graphic file (type png)
 <use figures/learning_rate.png>
 Package pdftex.def Info: figures/learning_rate.png  used on input line 452.
-(pdftex.def)             Requested size: 112.03271pt x 109.42383pt.
+(pdftex.def)             Requested size: 156.84854pt x 153.19456pt.
 <figures/temperature.png, id=291, 403.2666pt x 393.8715pt>
 File: figures/temperature.png Graphic file (type png)
 <use figures/temperature.png>
 Package pdftex.def Info: figures/temperature.png  used on input line 457.
-(pdftex.def)             Requested size: 112.03271pt x 109.42383pt.
+(pdftex.def)             Requested size: 156.84854pt x 153.19456pt.
 <figures/soft_coupling_temperature.png, id=292, 403.2666pt x 393.8715pt>
 File: figures/soft_coupling_temperature.png Graphic file (type png)
 <use figures/soft_coupling_temperature.png>
 Package pdftex.def Info: figures/soft_coupling_temperature.png  used on input l
 ine 462.
-(pdftex.def)             Requested size: 112.03271pt x 109.42383pt.
+(pdftex.def)             Requested size: 156.84854pt x 153.19456pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1459,17 +1459,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [11 <./figures/narrow_without_data_aug.png> <./figures/wide_without_data_aug.pn
 g> <./figures/random_without_data_aug.png> <./figures/narrow_with_data_aug.png>
  <./figures/wide_with_data_aug.png> <./figures/random_with_data_aug.png>]
-[12 <./figures/alpha.png> <./figures/learning_rate.png> <./figures/temperature.
-png> <./figures/soft_coupling_temperature.png>] (./ATML.bbl
+(./ATML.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 479--1
 
  []
 
+[12]
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
 (Font)              scaled to size 8.46002pt on input line 12.
 LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
 (Font)              scaled to size 9.63007pt on input line 19.
-[13]
+ [13 <./figures/alpha.png> <./figures/learning_rate.png> <./figures/temperature
+.png> <./figures/soft_coupling_temperature.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 59--65
 []\T1/mdput/m/n/9 Marlos C. Machado Rish-abh Agar-wal.  Con-trast-ive be-ha-vi-
 oural sim-il-ar-ity em-bed-dings
@@ -1524,7 +1525,7 @@ ve/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive
 021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/202
 1/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2021/
 texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on ATML.pdf (14 pages, 3326672 bytes).
+Output written on ATML.pdf (14 pages, 3326734 bytes).
 PDF statistics:
  413 PDF objects out of 1000 (max. 8388607)
  315 compressed objects within 4 object streams
