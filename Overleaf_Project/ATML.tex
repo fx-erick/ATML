@@ -90,8 +90,8 @@ robustness, transfer and adaptation properties, challenging the basic assumption
 \\
 The type of generalization can be classified with respect to the distribution that training and test environments are drawn from: \cite{kirk2021survey}
 \begin{itemize}
-\item In singleton environments train and test environment are identical; no generalization is involved.
-\item In i.i.d. generalization environments train and test environments are drawn from the same distribution: $P_{\text{train}} (C) = P_{\text{test}}(C)$.
+\item In singleton environments, train and test environment are identical; no generalization is involved.
+\item In i.i.d. generalization environments, train and test environments are drawn from the same distribution: $P_{\text{train}} (C) = P_{\text{test}}(C)$.
 \item The most challenging form of generalization are o.o.d generalization environments. Training and test environments are drawn from distinct distributions: $P_{\text{train}} (C) \neq P_{\text{test}}(C)$.
 \end{itemize}
 Furthermore, \cite{kirk2021survey} categorizes current research on generalization in RL.
@@ -353,7 +353,7 @@ Additionally, the paper also includes results from further experiments with the 
 Lastly, the paper also introduces two additional experiments to show that PSE is also a good metric for generalization in two different tasks. First is PSM experiments done with a non image input LQR task with distractors. The other experiment is PSE with DM control experiments, whereby the generalization performance of PSE is evaluated against 6 different environments with video distractions in the background.
 
 \section{Results of reproducibility study}
-In this section, we elaborate on how we attempted to reproduce the results that were presented in the paper. The authors of this paper published their codes for both the jumping task from pixels task and the distracting control suite tasks with 6 different environments. We discuss in detail the reproducibility of these tasks and the corresponding results from these experiments.
+In this section, we elaborate on how we attempted to reproduce the results that were presented in the paper. The authors of the paper in question, published their codes for both the jumping task from pixels task and the distracting control suite tasks with 6 different environments. We discuss in detail the reproducibility of these tasks and the corresponding results from these experiments.
 
 \subsection{Jumping Task from Pixels : Main result}
 In the jumping task code, the authors generate imitation learning dataset from a certain hardcoded ideal policy of the pixel jumping task game itself, whereby the action jump would be selected only when the agent state is at a certain horizontal distance away from the obstacle. Otherwise the ideal policy would always maintain a "go right" action for the agent. Referring to the scheme described by the authors in Figure \ref{fig: Learning_Architecture}, the states of the agent from this ideal policy are the x inputs and the actions of agent from this ideal policy are the y inputs. These inputs are then augmented and projected before being fed into an adapted Nature DQN. During training with the training environment grid, the model would then learn ideal policies, which are iteratively evaluated against evaluation jumping task environments. These are done until a certain number of training epochs is achieved. The authors set the default training epoch as 2000 epochs. The results for the different augmentation, embedding and loss function ablation configurations are then averaged over 100 runs as summarized in Figure \ref{fig: tabular_results}.
@@ -362,7 +362,7 @@ The code itself is well structured and relatively reproducible. We encountered m
 
 When the script is run from our local PC CPUs, each training run of 2000 epochs takes in average about 2 hours to complete. The code provides GPU acceleration possibilities. When the script is run from a HPC cluster with an Intel Xeon CPU E5-26802 with four cores and two NVIDIA P100 GPUs, each training run of 2000 epochs takes in average about 50 minutes to complete. Therefore, this jumping task experiment itself may not be very easy to reproduce for those who do not have access to ample computing power.
 
-Due to time and computing power allocation in the HPC cluster constraints, we reduce the number of training runs from 100 runs to 5 runs. The hyperparameters, training grid width settings and ablation parameters are set according to the instruction given by the author in the readme of the Git repository. The results of the jumping task study with different training grid width and ablation parameters are summarized in the following table.
+Due to time and computing power allocation in the HPC cluster constraints, we reduce the number of training runs from 100 runs to 5 runs. The hyperparameters, training grid width settings and ablation parameters are set according to the instruction given by the author in the readme of the Git repository. The results of the jumping task study with different training grid width and ablation parameters are summarized in table \ref{table:Rec_bisection}.
 
 
 Additionally, for visualization purposes, we have also obtained the training log plots and the training grid visualizations that we can compare with the figures found within the paper.
