@@ -195,16 +195,18 @@ if __name__ == '__main__':
 
 
     min_episodes_criterion = 100
-    max_episodes = 50
-    max_steps_per_episode = 100
+    max_episodes = 100000
+    max_steps_per_episode = 5000
 
     # Cartpole-v0 is considered solved if average reward is >= 195 over 100
     # consecutive trials
-    reward_threshold = 195
+    reward_threshold = 200
     running_reward = 0
 
     # Discount factor for future rewards
     gamma = 0.99
+
+    env._max_episode_steps = 5000
 
     # Keep last episodes reward
     episodes_reward: collections.deque = collections.deque(maxlen=min_episodes_criterion)
@@ -228,7 +230,7 @@ if __name__ == '__main__':
 
 
     print(f'\nSolved at episode {i}: average reward: {running_reward:.2f}!')
-    env.gravity = 2
+    env.length = 200
     with tqdm.trange(max_episodes) as t:
       for i in t:
         initial_state = tf.constant(env.reset(), dtype=tf.float32)

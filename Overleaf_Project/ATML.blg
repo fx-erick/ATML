@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ATML.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Database file #1: citations.bib
+Warning--empty journal in hadeep
+Warning--empty year in hadeep
+You've used 12 entries,
+            2118 wiz_defined-function locations,
+            544 strings with 6015 characters,
+and the built_in function-call counts, 3092 in all, are:
+= -- 273
+> -- 181
+< -- 0
++ -- 74
+- -- 60
+* -- 168
+:= -- 547
+add.period$ -- 32
+call.type$ -- 12
+change.case$ -- 66
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 103
+empty$ -- 251
+format.name$ -- 60
+if$ -- 633
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 5
+newline$ -- 58
+num.names$ -- 24
+pop$ -- 105
+preamble$ -- 1
+purify$ -- 54
+quote$ -- 0
+skip$ -- 85
+stack$ -- 0
+substring$ -- 62
+swap$ -- 12
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 48
+warning$ -- 2
+while$ -- 24
+width$ -- 14
+write$ -- 112
+(There were 2 warnings)
