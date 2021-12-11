@@ -44,6 +44,11 @@ Kimin Lee, Kibok Lee, Jinwoo Shin, and Honglak Lee.
 \newblock Network randomization: A simple technique for generalization in deep
   reinforcement learning, 2020.
 
+\bibitem{openai}
+OpenAI.
+\newblock A toolkit for developing and comparing reinforcement learning
+  algorithms.
+
 \bibitem{puterman2005markov}
 M~Puterman.
 \newblock Markov decision processes: Discrete stochastic dynamic programming.

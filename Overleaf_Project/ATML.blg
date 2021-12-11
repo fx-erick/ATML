@@ -7,45 +7,45 @@ Reallocating 'name_of_file' (item size: 1) to 10 items.
 Database file #1: citations.bib
 Warning--empty journal in hadeep
 Warning--empty year in hadeep
-You've used 12 entries,
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            544 strings with 6015 characters,
-and the built_in function-call counts, 3092 in all, are:
-= -- 273
-> -- 181
+            548 strings with 6102 characters,
+and the built_in function-call counts, 3287 in all, are:
+= -- 289
+> -- 188
 < -- 0
-+ -- 74
-- -- 60
-* -- 168
-:= -- 547
-add.period$ -- 32
-call.type$ -- 12
-change.case$ -- 66
++ -- 78
+- -- 62
+* -- 173
+:= -- 578
+add.period$ -- 34
+call.type$ -- 13
+change.case$ -- 70
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 103
-empty$ -- 251
-format.name$ -- 60
-if$ -- 633
+cite$ -- 15
+duplicate$ -- 110
+empty$ -- 273
+format.name$ -- 62
+if$ -- 675
 int.to.chr$ -- 0
-int.to.str$ -- 12
+int.to.str$ -- 13
 missing$ -- 5
-newline$ -- 58
-num.names$ -- 24
-pop$ -- 105
+newline$ -- 62
+num.names$ -- 26
+pop$ -- 113
 preamble$ -- 1
-purify$ -- 54
+purify$ -- 57
 quote$ -- 0
-skip$ -- 85
+skip$ -- 95
 stack$ -- 0
-substring$ -- 62
-swap$ -- 12
+substring$ -- 68
+swap$ -- 13
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 52
 warning$ -- 2
-while$ -- 24
-width$ -- 14
-write$ -- 112
+while$ -- 26
+width$ -- 15
+write$ -- 119
 (There were 2 warnings)
